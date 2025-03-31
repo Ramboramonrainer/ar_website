@@ -20,7 +20,7 @@
                 ar-modes="webxr scene-viewer quick-look" 
                 environment-image="neutral"
                 autoplay
-                loop>   
+                >   
 
 
 
@@ -38,6 +38,17 @@
         }
 
         document.addEventListener('DOMContentLoaded', checkARCoreCompatibility);
+    </script>
+    <model-viewer id="xfade-demo" camera-controls touch-action="pan-y" animation-name="Running" ar ar-modes="webxr scene-viewer" scale="0.2 0.2 0.2" shadow-intensity="1" src="../../shared-assets/models/RobotExpressive.glb" alt="An animated 3D model of a robot or soldier"></model-viewer>
+    <script>
+      (() => {
+        const modelViewer = document.querySelector('#xfade-demo');
+
+        self.setInterval(() => {
+          modelViewer.animationName = modelViewer.animationName === 'Running' ?
+            'Idle' : 'Running';
+        }, 1500.0);
+      })();
     </script>
    </body>
 </html>
