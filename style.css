@@ -1,0 +1,52 @@
+/* styles.css */
+/* This CSS file is linked to the index.html file */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem 0;
+}
+
+main {
+    padding: 2rem;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+model-viewer {
+    width: 80%; /* Setzt die Breite auf 80% des Containers */
+    height: 80vh; /* Setzt die Höhe auf 80% der Viewport-Höhe */
+    max-width: 1200px; /* Optional: Maximale Breite */
+    margin: auto; /* Zentriert das Element horizontal */
+    display: block; /* Stellt sicher, dass es als Blockelement behandelt wird */
+}
+
+.align{
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh; /* Vollbildhöhe */
+background-color: #f9f9f9; /* Beispiel: Hintergrundfarbe */
+}
+
+.headline{
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
