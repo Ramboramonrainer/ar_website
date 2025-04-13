@@ -27,14 +27,6 @@ footer {
     bottom: 0;
     width: 100%;
 }
-model-viewer {
-    width: 80%; /* Setzt die Breite auf 80% des Containers */
-    height: 80vh; /* Setzt die Höhe auf 80% der Viewport-Höhe */
-    max-width: 1200px; /* Optional: Maximale Breite */
-    margin: auto; /* Zentriert das Element horizontal */
-    display: block; /* Stellt sicher, dass es als Blockelement behandelt wird */
-}
-
 .align{
 display: flex;
 justify-content: center;
