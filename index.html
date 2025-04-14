@@ -13,6 +13,7 @@
     <H2 class="headline">Claydream Run</H2>
   </header>
   <body>
+    <article>
     <p>
       Als Kind war ich hauptsächlich mit Tagträumen beschäftigt, bei jeder Fahrt ob mit Zug oder Bus <br>
       hab ich in die Ferne gestarrt. Tagtäglich hab ich mir vorbeiziehende Gebäude und Landschaften angeschaut <br>
@@ -22,8 +23,10 @@
       um diese Erfahrung zu teilen. <br>
       Viel Spaß!
     </p>
+  </article>
+  <div class="model-viewer">
     <!-- Hier neue 3D dateien Verknüpfen-->
-  <model-viewer class="model-viewer" 
+  <model-viewer 
                 src="dude.glb"
                 ios-src="dude.usdz"
                 alt="running dude"
@@ -35,6 +38,7 @@
                 autoplay
                 >   
   </model-viewer>
+</div>
    <!-- script zum doppelchecken ob das überhaupt funktioniert mit Endgerät -->  
  <script>
         async function checkARCoreCompatibility() {
