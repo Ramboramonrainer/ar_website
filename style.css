@@ -2,22 +2,37 @@
 /* This CSS file is linked to the index.html file */
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: Helvetica, sans-serif,;
+    font-weight: bold;
     margin: 0;
     padding: 0;
     background-color: #8a4747;
 }
 
 header {
-    background-color: #333;
+    background-color: #8a4747;
     color: white;
     padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header-image{
+    width:40rem;
+    height:auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 main {
     padding: 2rem;
+    
 }
 
+p{
+    color: white;
+}
 footer {
     background-color: #333;
     color: white;
@@ -50,6 +65,7 @@ article{
     align-items: center;
     height: 100%;
     padding-top: 2rem;
+    text-align:justify
 
 }
 .model-viewer{

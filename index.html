@@ -4,15 +4,14 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AR_Test
-    </title>   
+    <title>Claydream Run
+    </title>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/examples/js/webxr/VRButton.js"></script>
     <link rel="stylesheet" href="style.css">
   </head>
   <header>
-    <H2 class="headline">Claydream Run</H2>
+    <!--H2 class="headline">Claydream Run</H2-->
+    <img src="header_hintergrund.jpg" alt="Claydream Run" class="header-image">
   </header>
   <body>
     <article>
@@ -29,8 +28,8 @@
   <div class="model-viewer">
     <!-- Hier neue 3D dateien Verknüpfen-->
   <model-viewer 
-                src="dude.glb"
-                ios-src="dude.usdz"
+                src="dude_update.glb"
+                ios-src="dude_update.usdz"
                 alt="running dude"
                 ar
                 ar-tracking="motion"
@@ -38,8 +37,27 @@
                 ar-modes="webxr scene-viewer quick-look" 
                 environment-image="neutral"
                 autoplay
+                style="width: 300px; height: 300px"
+                
                 >   
   </model-viewer>
+  <script>
+const modelViewer = document.getElementById('model-viewer');
+
+// Event Listener für Kamera-Bewegung
+modelViewer.addEventListener('camera-change', () => {
+  // Beispiel: Modell relativ zur Kamera bewegen
+  const cameraOrbit = modelViewer.getCameraOrbit();
+  const { theta, phi, radius } = cameraOrbit;
+
+  // Setze das Modell relativ zur Kamera
+  modelViewer.updateFraming({
+    theta: theta + 0.1, // Beispiel: Modell leicht versetzen
+    phi: phi,
+    radius: radius
+  });
+});
+  </script>
 </div>
    <!-- script zum doppelchecken ob das überhaupt funktioniert mit Endgerät -->  
  <script>
@@ -55,43 +73,6 @@
 
         document.addEventListener('DOMContentLoaded', checkARCoreCompatibility);
     </script> 
-
-<script src="app.js">
-  import * as THREE from 'three';
-import { VRButton } from 'three/examples/jsm/webxr/VRButton.js';
-
-// Szene, Kamera und Renderer erstellen
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.01, 20);
-const renderer = new THREE.WebGLRenderer({ antialias: true });
-renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.xr.enabled = true;
-document.body.appendChild(renderer.domElement);
-document.body.appendChild(VRButton.createButton(renderer));
-
-// Licht hinzufügen
-const light = new THREE.HemisphereLight(0xffffff, 0xbbbbff, 1);
-light.position.set(0.5, 1, 0.25);
-scene.add(light);
-
-// 3D-Modell erstellen (z. B. eine Box als Platzhalter)
-const geometry = new THREE.BoxGeometry(0.2, 0.2, 0.2);
-const material = new THREE.MeshStandardMaterial({ color: 0x0077ff });
-const cube = new THREE.Mesh(geometry, material);
-scene.add(cube);
-
-// Positioniere das Modell vor der Kamera
-cube.position.set(0, 0, -1); // 1 Meter vor der Kamera
-
-// Animationsschleife
-function animate() {
-  renderer.setAnimationLoop(() => {
-    renderer.render(scene, camera);
-  });
-}
-
-animate();
-</script>
    </body>
 </html>
 
