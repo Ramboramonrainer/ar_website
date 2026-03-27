@@ -4,8 +4,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Claydream Run
-    </title>
+    <title>Claydream Run</title>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <link rel="stylesheet" href="style.css">
   </head>
@@ -14,30 +13,30 @@
     <img src="header_hintergrund.jpg" alt="Claydream Run" class="header-image">
   </header>
   <body>
-    <article>
-    <p>
-      Als Kind war ich hauptsächlich mit Tagträumen beschäftigt, bei jeder Fahrt ob mit Zug oder Bus <br>
-      hab ich in die Ferne gestarrt. Tagtäglich hab ich mir vorbeiziehende Gebäude und Landschaften angeschaut <br>
-      und mir vorgestellt wie eine Figur die Horizontlinie entlang läuft, und von Gebäude zu Gebäude springt, und <br>
+    <article class="text-container">
+    <p class="text">
+      Als Kind war ich hauptsächlich mit Tagträumen beschäftigt, bei jeder Fahrt ob mit Zug oder Bus hab ich in die Ferne gestarrt. 
+      Tagtäglich hab ich mir vorbeiziehende Gebäude und Landschaften angeschaut und mir vorgestellt wie eine Figur die Horizontlinie entlang läuft, und von Gebäude zu Gebäude springt, und 
       mit mir mitläuft. Ich fragte mich ob das nur mir als Kind so ging oder ob es eine kollektive Erfahrung ist. <br>
-      Es stellte sich heraus, es ist nicht so kollektiv wie ich gedacht habe, sodass ich hier dieses Tool gebaut habe <br>
-      um diese Erfahrung zu teilen. <br>
+      Es stellte sich heraus, es ist nicht so kollektiv wie ich gedacht habe, sodass ich hier dieses Tool gebaut habe 
+      um meine Kindheitserinnerung zu teilen und erfahrbar zu machen. <br>
       Viel Spaß!
     </p>
   </article>
   <div class="model-viewer">
-    <!-- Hier neue 3D dateien Verknüpfen-->
   <model-viewer 
                 src="dude_update.glb"
                 ios-src="dude_update.usdz"
                 alt="running dude"
                 ar
                 ar-tracking="motion"
+                camera-orbit="90deg 90deg 4m"
+                min-field-of-view='40deg'
                 camera-controls
                 ar-modes="webxr scene-viewer quick-look" 
                 environment-image="neutral"
                 autoplay
-                style="width: 300px; height: 300px"
+                style="width: 80rem; height: 80rem"
                 
                 >   
   </model-viewer>
@@ -49,7 +48,7 @@ modelViewer.addEventListener('camera-change', () => {
   // Beispiel: Modell relativ zur Kamera bewegen
   const cameraOrbit = modelViewer.getCameraOrbit();
   const { theta, phi, radius } = cameraOrbit;
-
+  
   // Setze das Modell relativ zur Kamera
   modelViewer.updateFraming({
     theta: theta + 0.1, // Beispiel: Modell leicht versetzen
