@@ -54,7 +54,7 @@ p{
         text-align:justify;
         padding: 0 2rem;
 }
-@media (min-width: 900px){
+@media (min-width: 400px){
     .text{
         width: 50%;
     }
