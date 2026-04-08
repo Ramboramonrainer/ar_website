@@ -57,6 +57,11 @@ p{
     .text{
         width: 60%;
         text-align: left;
+    -moz-hyphens: auto;
+    -o-hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
     }
 } 
 @media (min-width: 1200px){
